@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instalar Facturador CIS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(to right, #f8f9fa, #e9ecef);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .card {
+      border: none;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary {
+      border-radius: 8px;
+    }
+    .qr-img {
+      border: 2px solid #dee2e6;
+      padding: 8px;
+      border-radius: 12px;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="card p-4 p-md-5 text-center">
+    <h1 class="mb-3 fw-bold text-primary">📲 Instalar Facturador CIS</h1>
+    <p class="mb-4 fs-5">Descarga nuestra aplicación Android y lleva el control de tu negocio en la palma de tu mano.</p>
+
+    <!-- Imagen QR generada desde API -->
+    <div class="mb-4 d-flex justify-content-center">
+      <img id="qrImage" class="qr-img" width="180" height="180" alt="QR App">
+    </div>
+
+    <!-- Botón de descarga -->
+    <a href="https://drive.google.com/uc?export=download&id=ID_DE_TU_APK" class="btn btn-primary btn-lg">
+      <i class="bi bi-download me-1"></i> Descargar APK
+    </a>
+
+    <p class="mt-4 text-muted small">Compatible con Android 7.0 o superior. Si ves una advertencia, selecciona “Conservar de todos modos”.</p>
+  </div>
+</div>
+
+<!-- Script para generar imagen QR -->
+<script>
+  const apkUrl = "https://drive.google.com/uc?export=download&id=ID_DE_TU_APK"; // <-- Reemplaza este ID
+  document.getElementById("qrImage").src =
+    "https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=" + encodeURIComponent(apkUrl);
+</script>
+
+</body>
+</html>
